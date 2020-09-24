@@ -104,8 +104,9 @@ function createAsteroid() {
   );
   asteroidContainer.add(asteroidSprite);
   asteroidContainer.add(asteroidNum);
+  asteroids.add(asteroidContainer);
 
-  const asteroid = asteroids.add(asteroidContainer);
+  asteroidContainer.body.setGravityY(Phaser.Math.Between(-175, 0));
 
   asteroidTimer.reset({
     delay: Phaser.Math.Between(500, 2000),
