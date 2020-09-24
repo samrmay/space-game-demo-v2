@@ -28,11 +28,11 @@ var galaxy;
 var game = new Phaser.Game(config);
 
 function preload() {
-  this.load.image("player", "./assets/SVGs/spaceship.svg");
-  this.load.image("asteroid", "./assets/SVGs/asteroid.svg");
-  this.load.image("spaceDust", "./assets/PNGs/bgParralaxSpaceDust.png");
-  this.load.image("stars", "./assets/PNGs/bgParralaxStars.png");
-  this.load.image("galaxy", "./assets/PNGs/bgParralaxGalaxy.png");
+  this.load.svg("player", "/game/assets/SVGs/spaceship.svg");
+  this.load.image("asteroid", "/game/assets/PNGs/asteroid.png");
+  this.load.image("spaceDust", "/game/assets/PNGs/bgParralaxSpaceDust.png");
+  this.load.image("stars", "/game/assets/PNGs/bgParralaxStars.png");
+  this.load.image("galaxy", "/game/assets/PNGs/bgParralaxGalaxy.png");
 }
 
 function create() {
@@ -91,7 +91,7 @@ function createAsteroid() {
   const asteroidScoreValue = Phaser.Math.Between(1, 10);
   const asteroidNum = this.add
     .text(0, 0, asteroidScoreValue, {
-      fontSize: "264px",
+      fontSize: "48px",
       color: "white",
       fontStyle: "bold",
     })
@@ -104,12 +104,11 @@ function createAsteroid() {
   );
   asteroidContainer.add(asteroidSprite);
   asteroidContainer.add(asteroidNum);
-  asteroidContainer.setScale(0.15);
 
   const asteroid = asteroids.add(asteroidContainer);
 
   asteroidTimer.reset({
-    delay: Phaser.Math.Between(1000, 2500),
+    delay: Phaser.Math.Between(500, 2000),
     callback: createAsteroid,
     callbackScope: this,
     loop: true,
