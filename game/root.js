@@ -91,8 +91,8 @@ function createAsteroid() {
   const asteroidScoreValue = Phaser.Math.Between(1, 10);
   const asteroidNum = this.add
     .text(0, 0, asteroidScoreValue, {
-      fontSize: "132px",
-      color: "cyan",
+      fontSize: "264px",
+      color: "white",
       fontStyle: "bold",
     })
     .setOrigin(0.5, 0.5);
